@@ -27,7 +27,9 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        //
+        dd('entrou');
+        //criar novo produto
+        return view('produto.create');
     }
 
     /**
