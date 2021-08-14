@@ -23,3 +23,6 @@ Route::get('/produto',[ProdutoController::class, 'index'])->name('produto.index'
 
 Route::get('/produto/create',[ProdutoController::class, 'create'])->name('produto.create');
 
+
+Route::post('/produto/create',[ProdutoController::class, 'store'])->name('produto.create');
+
