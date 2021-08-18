@@ -11,15 +11,15 @@
 <body>
     <div class="container col6">
 
-    {{Form::open(array('url' => '/produto/create')) }}
+    {{ Form::open(array('url' => '/produto/create')) }}
 
     {{ Form::label('nome', 'Nome') }}
-    {{Form::text('nome', null)}}
+    {{ Form::text('nome', null , ['class' => 'form-control'] )}}
     
     {{ Form::label('descricao', 'Descrição') }}
-    {{ Form::text('descricao', null) }}
+    {{ Form::text('descricao', null , ['class' => 'form-control'] ) }}
     
-    {{ Form::submit('Enviar') }}
+    {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success ']) }}
 
     {{ Form::close()  }}
 
