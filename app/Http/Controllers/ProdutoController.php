@@ -41,10 +41,16 @@ class ProdutoController extends Controller
     public function store(Request $request)
     {
         
-        $data = $request->all();
-        dd($data);
-    
-        //
+        // $data = $request->all();
+        //dd($data);
+        $produto = new Produto;
+        $produto->nome = $request->nome;
+        $produto->descricao = $request->descricao;
+        $produto->save(); 
+
+        return redirect()->route('produto.index')->with('message','Produto Criado com sucesso!');
+
+        
     }
 
     /**

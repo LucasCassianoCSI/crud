@@ -9,11 +9,11 @@
     <title>Adicionando novos produtos</title>
 </head>
 <body>
-    <div class="container col6">
+    <div class="container col-6">
 
     {{ Form::open(array('url' => '/produto/create')) }}
 
-    {{ Form::label('nome', 'Nome') }}
+    {{ Form::label('nome', 'Nome do produtos') }}
     {{ Form::text('nome', null , ['class' => 'form-control'] )}}
     
     {{ Form::label('descricao', 'Descrição') }}
