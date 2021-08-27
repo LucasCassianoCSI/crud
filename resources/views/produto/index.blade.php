@@ -21,6 +21,7 @@
                 <td>ID</td>
                 <td>Nome</td>
                 <td>Descrição</td>
+                <td>ações</td>
             </tr>
         </thead>      
         <tbody>
@@ -31,6 +32,10 @@
                         <td> {{$value->id}}</td>
                         <td> {{$value->nome}}</td>
                         <td> {{$value->descricao}}</td>
+                        <td>
+                    <a href="{{ URL::to('produto/' . $value->id) }}">Visualizar</a>
+                    <!-- http://localhost/lounge/crud212/public/produto/3 -->
+                </td>
                     </tr>
                     @endforeach
 
