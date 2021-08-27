@@ -9,6 +9,7 @@
     <title>Adicionando novos produtos</title>
 </head>
 <body>
+
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -18,15 +19,16 @@
         </ul>
     </div>
     @endif
+    
     <div class="container col-6">
 
-    {{ Form::open(array('url' => '/produto/create')) }}
+    {{ Form::model($produto,array('route' => array('produto.update', $produto->id), 'method' => 'PUT')) }}
 
     {{ Form::label('nome', 'Nome do produtos') }}
-    {{ Form::text('nome', null , ['class' => 'form-control'] )}}
+    {{ Form::text('nome', $produto->nome , ['class' => 'form-control'] )}}
     
     {{ Form::label('descricao', 'Descrição') }}
-    {{ Form::text('descricao', null , ['class' => 'form-control'] ) }}
+    {{ Form::text('descricao', $produto->descricao , ['class' => 'form-control'] ) }}
     
     {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success ']) }}
 

@@ -11,17 +11,21 @@
 
     @if (Session::has('message'))
     <div class="alert alert-info">{{ Session::get('message') }}</div>
-@endif
+   @endif
+    <script>
+     function ConfirmDelete() {
+        return confirm('Tem certeza que deseja excluir este registro?');
+    }
+    </script>
 
-
-    <div class="container col-6">
+    <div class="container col-8">
      <table class="table  no-margin">
         <thead>
             <tr>
                 <td>ID</td>
                 <td>Nome</td>
                 <td>Descrição</td>
-                <td>ações</td>
+                <td></td> <td></td> <td></td>
             </tr>
         </thead>      
         <tbody>
@@ -32,11 +36,12 @@
                         <td> {{$value->id}}</td>
                         <td> {{$value->nome}}</td>
                         <td> {{$value->descricao}}</td>
-                        <td>
-                    <a href="{{ URL::to('produto/' . $value->id) }}">Visualizar</a>
-                    <!-- http://localhost/lounge/crud212/public/produto/3 -->
-                </td>
+                        <td><a class="btn btn-primary" href="{{ URL::to('produto/' . $value->id) }}">Visualizar</a> </td>    
+                        <td><a class="btn btn-warning" href="{{ URL::to('produto/' . $value->id . '/edit') }}"> editar</a></td> 
+                        <td><a class="btn btn-danger" href="#"> deletar</a></td>
+                    <!--  -->    
                     </tr>
+
                     @endforeach
 
                 </tr>
@@ -50,7 +55,6 @@
 
 
 </div>
-
 
   
 </body>
