@@ -113,8 +113,6 @@ class ProdutoController extends Controller
         $produto->save(); 
 
         return redirect()->route('produto.index')->with('message','Produto Editado com sucesso!');
-
-        
     }
 
     /**
@@ -123,8 +121,11 @@ class ProdutoController extends Controller
      * @param  \App\Models\Produto  $produto
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Produto $produto)
+    public function destroy($id)
     {
-        //
+        $produto = Produto::findOrFail($id);
+        $produto->delete();
+        
+        return redirect()->route('produto.index')->with('message','Produto Excluido com sucesso!');
     }
 }

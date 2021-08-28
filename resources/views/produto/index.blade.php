@@ -38,7 +38,13 @@
                         <td> {{$value->descricao}}</td>
                         <td><a class="btn btn-primary" href="{{ URL::to('produto/' . $value->id) }}">Visualizar</a> </td>    
                         <td><a class="btn btn-warning" href="{{ URL::to('produto/' . $value->id . '/edit') }}"> editar</a></td> 
-                        <td><a class="btn btn-danger" href="#"> deletar</a></td>
+                        <td>
+                        
+                    {{ Form::open(array('url' => 'produto/' . $value->id, 'onsubmit' => 'return ConfirmDelete()')) }}
+                    {{ Form::hidden('_method', 'DELETE') }}
+                    {{ Form::submit('Excluir', array('class' => 'btn btn-danger')) }}
+                    {{ Form::close() }}
+                        </td>
                     <!--  -->    
                     </tr>
 

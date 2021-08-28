@@ -29,3 +29,5 @@ Route::get('/produto/{id}', [ProdutoController::class, 'show'])->name('produto.s
 
 Route::get('/produto/{id}/edit' , [ProdutoController::class,'edit'])->name('produto.edit');
 Route::put('/produto/{id}' , [ProdutoController::class,'update'])->name('produto.update');
+
+Route::delete('/produto/{id}', [ProdutoController::class, 'destroy'])->name('produto.destroy');
