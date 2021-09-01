@@ -57,7 +57,7 @@ class ProdutoController extends Controller
         $produto->descricao = $request->descricao;
         $produto->save(); 
 
-        return redirect()->route('produto.index')->with('message','Produto Criado com sucesso!');
+        return redirect()->route('produto.index')->with('message',"Produto $produto->nome com sucesso!");
 
         
     }
@@ -112,7 +112,7 @@ class ProdutoController extends Controller
         $produto->descricao = $request->descricao;
         $produto->save(); 
 
-        return redirect()->route('produto.index')->with('message','Produto Editado com sucesso!');
+        return redirect()->route('produto.index')->with('message',"Produto $produto->name Editado com sucesso!");
     }
 
     /**
