@@ -22,12 +22,17 @@
 
     {{ Form::open(array('url' => '/produto/create')) }}
 
+    
+    {{ Form::label('categoria', 'Categoria') }}
+    {{ Form::select('categoria_id', $categorias , ['class' => 'form-control'] ) }}
+    
     {{ Form::label('nome', 'Nome do produtos') }}
     {{ Form::text('nome', null , ['class' => 'form-control'] )}}
     
     {{ Form::label('descricao', 'Descrição') }}
     {{ Form::text('descricao', null , ['class' => 'form-control'] ) }}
-    
+
+
     {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success ']) }}
 
     {{ Form::close()  }}

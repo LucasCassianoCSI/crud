@@ -16,7 +16,7 @@
 <p> ID:                {{ $produto->id}}</p>
 
 <p> Nome:              {{ $produto->nome}}</p>
-
+<p>Categoria:          {{ $produto->categoria->nome }}</p>
 <p> Descrição:         {{ $produto->descricao}}</p>
 
 <p> Criação:           {{ Carbon\Carbon::Parse($produto->created)->format('d/m/Y h:i') }}</p>

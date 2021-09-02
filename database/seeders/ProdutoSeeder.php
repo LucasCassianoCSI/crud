@@ -15,14 +15,22 @@ class ProdutoSeeder extends Seeder
     public function run()
     {
        Produto::create([
-            'nome' => 'brigadeiro',
-            'descricao' => 'doce absurdamente doce'
+            'nome' => 'Brigadeiro',
+            'descricao' => 'doce absurdamente doce',
+            'categoria_id' => 1
        ]);
 
        Produto::create([
-        'nome' => 'cajuzinho',
-        'descricao' => 'doce doce'
+        'nome' => 'Coxinha',
+        'descricao' => 'coxinha de frango',
+        'categoria_id' => 2
         ]);
+
+        Produto::create([
+            'nome' => 'Joelho',
+            'descricao' => 'Joelho de frango',
+            'categoria_id' => 2
+            ]);
 
     }
 }

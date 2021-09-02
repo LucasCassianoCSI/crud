@@ -24,6 +24,7 @@
             <tr>
                 <td>ID</td>
                 <td>Nome</td>
+                <td>Categoria</td>
                 <td>Descrição</td>
                 <td></td> <td></td> <td></td>
             </tr>
@@ -35,6 +36,7 @@
                     <tr>
                         <td> {{$value->id}}</td>
                         <td> {{$value->nome}}</td>
+                        <td> {{$value->categoria->nome}}</td>
                         <td> {{$value->descricao}}</td>
                         <td><a class="btn btn-primary" href="{{ URL::to('produto/' . $value->id) }}">Visualizar</a> </td>    
                         <td><a class="btn btn-warning" href="{{ URL::to('produto/' . $value->id . '/edit') }}"> editar</a></td> 

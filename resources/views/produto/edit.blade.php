@@ -24,6 +24,9 @@
 
     {{ Form::model($produto,array('route' => array('produto.update', $produto->id), 'method' => 'PUT')) }}
 
+    {{ Form::label('categoria', 'Categoria') }}
+    {{ Form::select('categoria_id', $categorias , ['class' => 'form-control'] ) }}
+    
     {{ Form::label('nome', 'Nome do produtos') }}
     {{ Form::text('nome', $produto->nome , ['class' => 'form-control'] )}}
     
