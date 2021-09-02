@@ -16,12 +16,10 @@ class CategoriaSeeder extends Seeder
     {
        Categoria::create([
             'nome' => 'Doces',
-            
        ]);
 
        Categoria::create([
         'nome' => 'Salgados',
-        
         ]);
 
     }
